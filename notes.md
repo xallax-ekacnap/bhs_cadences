@@ -142,8 +142,10 @@ flyctl ssh sftp shell
 Use crtl+C to exit ftp shell.
 
 Start a shell session in the running machine and 
-expand the contents of `data.tgz` into `workspace/data`
+expand the contents of `data.tgz` into `workspace/data` and 
+make sure that the files in `data/` are all readable.
 
 ```
 flyctl ssh console --command 'tar -xvf data.tgz -C data'
+flyctl ssh console --command 'chmod -R a+r data'
 ```
